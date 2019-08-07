@@ -5,9 +5,9 @@ db = peewee.SqliteDatabase('user.db')
 class User(peewee.Model):
     state = peewee.IntegerField(default = 0)#
     user_id = peewee.TextField(unique = True)
-    phone = peewee.TextField(default = null)#
-    name = peewee.TextField(default = null)#
-    surname = peewee.TextField(default = null)#
+    phone = peewee.TextField(default = '')#
+    name = peewee.TextField(default = '')#
+    surname = peewee.TextField(default = '')#
     
     class Meta:
         database = db
