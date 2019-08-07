@@ -36,7 +36,7 @@ def webhook():
         response['response']['text'] = 'Спасибо ваш аккаунт успешно создан'
         set_state(user_id, 4) 
     elif state == 4:
-        name = getname(user_id)
+        name = get_name(user_id)
         surname = get_surname(user_id)
         text = f'You name:{name}\n'
         text = text + f'You surename:{surname}\n'
