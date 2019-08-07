@@ -16,12 +16,11 @@ def webhook():
               'end_session': False
             }
     }
-    if request.json['request']['original_utterance'] == '':
-        set_state(user_id, 0)
+    
     user_id = request.json['session']['user_id']
     state = get_state(user_id)
     
-    if state == 0 and request.json['request']['original_utterance'] !='':
+    if state == 0 :
         response['responce']['text'] = 'Enter you`r name '
         set_state(user_id, 1)
     elif state == 1:
