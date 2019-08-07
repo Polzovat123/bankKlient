@@ -40,5 +40,6 @@ def webhook():
         surname = get_surname(user_id)
         text = f'You name:{name}\n'
         text = text + f'You surename:{surname}\n'
+        return response
 
 app.run(host='0.0.0.0', port=os.getenv('PORT',5000))
