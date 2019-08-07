@@ -21,19 +21,19 @@ def webhook():
     state = get_state(user_id)
     
     if state == 0 :
-        response['responce']['text'] = 'Enter you`r name '
+        response['response']['text'] = 'Enter you`r name '
         set_state(user_id, 1)
     elif state == 1:
         set_name(user_id, request.json['request']['original_utterance'])
-        response['responce']['text'] = 'Enter you`r phone'
+        response['response']['text'] = 'Enter you`r phone'
         set_state(user_id, 2)
     elif state == 2:
         set_phone(user_id, request.json['request']['original_utterance'])
-        response['responce']['text'] = 'Enter you`r surname'
+        response['response']['text'] = 'Enter you`r surname'
         set_state(user_id, 3)  
     elif state == 3:
         set_surname(user_id, request.json['request']['original_utterance'])
-        response['responce']['text'] = 'Спасибо ваш аккаунт успешно создан'
+        response['response']['text'] = 'Спасибо ваш аккаунт успешно создан'
         set_state(user_id, 4) 
     elif state == 4:
         name = getname(user_id)
