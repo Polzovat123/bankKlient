@@ -20,7 +20,7 @@ def init():
 def get_state(user_id):
     user = User.get_or_none(user_id = user_id)
     if user is None:
-        return None
+        return 0
     return user.state
   
 def set_state(user_id, state):
